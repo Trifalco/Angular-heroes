@@ -1,0 +1,16 @@
+<h1>Mi Heroe Favorito</h1>
+
+<ul class="personajes">
+    <li *ngFor="let data of datas">
+    <h1>{{data.id}}</h1>
+    <h3>{{data.name}}</h3>
+    <img src="{{data.image}}" alt="{{data.name}}">
+    <h3>{{data.status}}</h3>
+    </li>
+</ul>
+
+
+
+
+
+<router-outlet></router-outlet>

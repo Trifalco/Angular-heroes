@@ -1,0 +1,75 @@
+
+<h1>Contactanos</h1>
+<div class="card">
+    <div class="card-body">
+
+        <form [formGroup]="formuUser" (ngSubmit)="procesar()">
+
+        <div class="mb-2">
+            <label class="form-label">
+                Nombre
+            </label>
+            <input formControlName='nombre'type="text" class="form-control-nombre" placeholder="Sebas...">
+        </div>
+       
+        <div class="alert alert-danger mt-2" [hidden]="nombre.valid || nombre.pristine" ><!--ocultame esta clase cuando el nombre este.-->
+            El nombre debe ser ingresado
+        </div>
+       
+
+        <div class="mb-2">
+            <label class="form-label">
+                Apellido
+            </label>
+            <input formControlName='apellido'type="text" class="form-control-apellido" placeholder="Ramos Arévalo...">
+        </div>
+     
+        <div class="alert alert-danger mt-2" [hidden]="apellido.valid || apellido.pristine"><!--ocultame esta clase cuando el nombre este.-->
+           El apellido debe ser ingresado
+        </div>
+    
+
+        <div class="mb-2">
+            <label class="form-label">
+                Numero celular
+            </label>
+            <input formControlName='celular'type="tel" class="form-control" placeholder="31123123123...">
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label">
+                Email
+            </label>
+            <input formControlName='correo'type="email" class="form-control" placeholder="sebas@outlok.com...">
+        </div>
+
+        <div class="alert alert-danger mt-2" [hidden]="correo.valid || correo.pristine"><!--ocultame esta clase cuando el nombre este.-->
+            <span *ngIf="correo.errors?.['required']"><!--validacion cuando la propiedad errors de correo sea requiered si es asi , mostrar el siguiente mensaje de lo contrario no mostrar nada-->
+                El email debe ser ingresado
+               </span>
+               
+               <span *ngIf="correo.errors?.['email']"> <!--validacion cuando la propiedad errors de correo sea email si es asi , mostrar el siguiente mensaje de lo contrario no mostrar nada-->
+                El email debe ser valido
+               </span>
+        </div>
+
+        <div class="mb-2">
+            <label class="form-label">
+                Cuentanos tu experiencia
+            </label>
+            <input formControlName='comentario'type="text" class="form-control-comentario" placeholder="Cuentanos no que piensas...">
+        </div>
+
+        <button class="btn-btn-primary" [disabled]="formuUser.invalid">Send</button>
+
+    </form>
+
+        
+
+    </div>
+
+
+    
+</div>
+
+
